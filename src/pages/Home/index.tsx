@@ -1,5 +1,6 @@
 import { Coffee } from "../../@types/definitions";
 import { CoffeesList } from "../../components/CoffeesList";
+import { Title } from "../../components/Typography";
 import { Description } from "./components/Description";
 import { HomeContainer } from "./styles";
 
@@ -136,9 +137,10 @@ export function Home() {
   return (
     <HomeContainer>
       <Description />
-
-      <h3>Nossos cafés</h3>
-      <CoffeesList coffees={coffees} />
+      <div>
+        <Title variant="l">Nossos cafés</Title>
+        <CoffeesList coffees={coffees} />
+      </div>
     </HomeContainer>
   )
 }

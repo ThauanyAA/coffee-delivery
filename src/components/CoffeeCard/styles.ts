@@ -10,23 +10,6 @@ export const Card = styled.div`
   border-radius: 6px 36px;
   padding: 1.25rem;
   gap: 1rem;
-
-
-  & h4 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: ${(props) => props.theme["base-subtitle"]};
-    line-height: 130%;
-    font-family: 'Baloo 2', sans-serif;
-  }
-
-  & p {
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: ${(props) => props.theme["base-label"]};
-    line-height: 130%;
-    text-align: center; 
-  }
 `
 
 export const Image = styled.img`
@@ -60,11 +43,11 @@ export const BuyContainer = styled.div`
   width: 100%;
   margin-top: 1.4375rem;
   gap: 0.5rem;
-  & div > span {
+  /* & div > span {
     color: ${(props) => props.theme["base-text"]};
     line-height: 130%;
     font-size: 0.875rem;
-  }
+  } */
   & button {
     display: flex;
     align-items: center;
@@ -86,12 +69,6 @@ export const BuyContainer = styled.div`
       margin-right: 0.25rem;
     }
   }
-`
-
-export const Price = styled.span`
-  font-size: 1.5rem !important;
-  font-weight: 600;
-  font-family: 'Baloo 2', sans-serif;
 `
 export const AddToCartButton = styled.button`
   height: 2.375rem;

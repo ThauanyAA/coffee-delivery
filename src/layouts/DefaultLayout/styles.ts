@@ -4,5 +4,5 @@ export const DefaultLayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding: 0 10rem;
+  padding: 0 8rem;
 `

@@ -21,21 +21,6 @@ export const Content = styled.div`
   flex-direction: column;
   gap: 1rem;
   width: 38rem;
-
-  & h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    font-family: 'Baloo 2', sans-serif;
-    color: ${(props) => props.theme["base-title"]};
-    line-height: 130%;
-  }
-
-  & h3 {
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: ${(props) => props.theme["base-subtitle"]};
-    line-height: 130%;
-  }
 `;
 
 export const GridFeatures = styled.div`

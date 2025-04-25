@@ -1,9 +1,10 @@
-import { AddToCartButton, BuyContainer, Card, Image, Price, Tag, TagsContainer } from "./styles";
+import { AddToCartButton, BuyContainer, Card, Image, Tag, TagsContainer } from "./styles";
 import Expresso from "../../assets/coffees/Expresso.png";
 import { ShoppingCartSimple } from "phosphor-react";
 import { Coffee } from "../../@types/definitions";
 import { formatPriceToBRL } from "../../helpers/utils";
 import { InputNumber } from "../InputNumber";
+import { Text, Title } from "../Typography";
 
 export function CoffeeCard({ coffee }: { coffee: Coffee } ) {
   return (
@@ -18,12 +19,15 @@ export function CoffeeCard({ coffee }: { coffee: Coffee } ) {
         ))}
       </TagsContainer>
       
-      <h4>{coffee.name}</h4>
-      <p>{coffee.description}</p>
-
+      <Title variant="s">{coffee.name}</Title>
+      <Text variant="s" align="center" color="base-label">
+        {coffee.description}
+      </Text>
       <BuyContainer>
         <div>
-          <span>R$<Price>{formatPriceToBRL(coffee.price)}</Price></span>
+          <Text variant="xs" weight={400}>
+            R$<Title variant="m" color="base-text" inline>{formatPriceToBRL(coffee.price)}</Title>
+          </Text>
         </div>
         <InputNumber />
         <AddToCartButton>

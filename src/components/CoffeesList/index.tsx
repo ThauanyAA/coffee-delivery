@@ -1,13 +1,17 @@
 import { CoffeeCard } from "../CoffeeCard";
 import { Coffee } from "../../@types/definitions";
-import { CoffeesListContainer } from "./styles";
+import { CoffeesListContainer, Grid } from "./styles";
+import { Title } from "../Typography";
 
 export function CoffeesList({ coffees }: { coffees: Coffee[] }) {
   return (
     <CoffeesListContainer>
-      {coffees.map((coffee) => (
-        <CoffeeCard key={coffee.id} coffee={coffee} />
-      ))}
+      <Title variant="l">Nossos cafés</Title>
+      <Grid>
+        {coffees.map((coffee) => (
+          <CoffeeCard key={coffee.id} coffee={coffee} />
+        ))}
+      </Grid>
     </CoffeesListContainer>
   );
 }

@@ -1,13 +1,14 @@
-import { AddressForm } from "../../components/AddressForm";
+import { Cart } from "../../components/Cart";
+import { CheckoutForm } from "../../components/CheckoutForm";
 import { CheckoutContainer } from "./styles";
 
 export function Checkout() {
   return (
     <CheckoutContainer>
-      <AddressForm />
-      <div>
-        Cafés selecionados
-      </div>
+      <CheckoutForm />
+      <Cart>
+        
+      </Cart>
     </CheckoutContainer>
   )
 }

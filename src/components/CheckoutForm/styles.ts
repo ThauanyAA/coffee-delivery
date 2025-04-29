@@ -1,24 +1,16 @@
 import { styled } from 'styled-components';
 
-export const AddressFormContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 2rem;
-  width: 100%;
+interface CardHeaderProps {
+  color?: 'purple' | 'yellow-dark';
+}
 
-  padding: 2.5rem;
-  background: ${(props) => props.theme['base-card']};
-  border-radius: 6px;
-`;
-
-export const AddressHeader = styled.div`
+export const CardHeader = styled.div<CardHeaderProps>`
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
 
   & svg {
-    color: ${(props) => props.theme['yellow-dark']};
+    color: ${({ theme, color }) => theme[color || 'yellow-dark']};
   }
 `
 

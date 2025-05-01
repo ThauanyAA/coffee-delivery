@@ -9,9 +9,9 @@ interface ButtonProps extends ComponentProps<'button'> {
   children: React.ReactNode
 }
 
-export function Button(props: ButtonProps) {
+export function Button({ variant = 'primary', ...props }: ButtonProps) {
   return (
-    <ButtonStyled {...props}>
+    <ButtonStyled variant={variant} {...props}>
       {props.children}
     </ButtonStyled>
   )

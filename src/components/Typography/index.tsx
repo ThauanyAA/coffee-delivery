@@ -5,7 +5,7 @@ interface TextProps {
   variant?: 'xl' | 'l' | 'm' | 's' | 'xs';
   weight?: number;
   align?: 'left' | 'center' | 'right';
-  color?: 'base-title' | 'base-subtitle' | 'base-text' | 'base-label'
+  color?: 'base-title' | 'base-subtitle' | 'base-text' | 'base-label' | 'yellow-dark'
   inline?: boolean;
 }
 

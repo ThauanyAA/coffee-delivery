@@ -6,9 +6,7 @@ export function Checkout() {
   return (
     <CheckoutContainer>
       <CheckoutForm />
-      <Cart>
-        
-      </Cart>
+      <Cart />
     </CheckoutContainer>
   )
 }

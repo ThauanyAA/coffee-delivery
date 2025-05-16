@@ -7,7 +7,7 @@ export interface IconContainerProps {
 export const SuccessContainer = styled.div`
   display: grid;
   grid-template-columns: 0.5fr 0.5fr;
-  gap: 2rem;
+  gap: 8rem;
   margin-top: 2rem;
   width: 100%;
   justify-content: center;

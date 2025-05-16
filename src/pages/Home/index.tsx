@@ -11,7 +11,7 @@ const coffees: Coffee[] = [
     tags: ["Tradicional"],
     image: "/coffees/expresso-tradicional.png",
     price: 9.9,
-    quantity: 0,
+    quantity: 10,
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const coffees: Coffee[] = [
     tags: ["Tradicional"],
     image: "/coffees/expresso-americano.png",
     price: 9.9,
-    quantity: 0,
+    quantity: 10,
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const coffees: Coffee[] = [
     tags: ["Tradicional"],
     image: "/coffees/expresso-cremoso.png",
     price: 9.9,
-    quantity: 0,
+    quantity: 10,
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const coffees: Coffee[] = [
     tags: ["Tradicional", "Gelado"],
     image: "/coffees/expresso-gelado.png",
     price: 9.9,
-    quantity: 0,
+    quantity: 10,
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ const coffees: Coffee[] = [
     tags: ["Tradicional", "Com leite"],
     image: "/coffees/cafe-com-leite.png",
     price: 9.9,
-    quantity: 0,
+    quantity: 10,
   },
   {
     id: 6,
@@ -56,7 +56,7 @@ const coffees: Coffee[] = [
     tags: ["Tradicional", "Com leite"],
     image: "/coffees/latte.png",
     price: 9.9,
-    quantity: 0,
+    quantity: 10,
   },
   {
     id: 7,
@@ -65,7 +65,7 @@ const coffees: Coffee[] = [
     tags: ["Tradicional", "Com leite"],
     image: "/coffees/capuccino.png",
     price: 9.9,
-    quantity: 0,
+    quantity: 10,
   },
   {
     id: 8,
@@ -74,7 +74,7 @@ const coffees: Coffee[] = [
     tags: ["Tradicional", "Com leite"],
     image: "/coffees/macchiato.png",
     price: 9.9,
-    quantity: 0,
+    quantity: 10,
   },
   {
     id: 9,
@@ -83,7 +83,7 @@ const coffees: Coffee[] = [
     tags: ["Tradicional", "Com leite"],
     image: "/coffees/mochaccino.png",
     price: 9.9,
-    quantity: 0,
+    quantity: 10,
   },
   {
     id: 10,
@@ -92,7 +92,7 @@ const coffees: Coffee[] = [
     tags: ["Especial", "Com leite"],
     image: "/coffees/chocolate-quente.png",
     price: 9.9,
-    quantity: 0, 
+    quantity: 10, 
   },
   {
     id: 11,
@@ -101,7 +101,7 @@ const coffees: Coffee[] = [
     tags: ["Especial", "Alcoólico", "Gelado"],
     image: "/coffees/cubano.png",
     price: 9.9,
-    quantity: 0,
+    quantity: 10,
   },
   {
     id: 12,
@@ -110,7 +110,7 @@ const coffees: Coffee[] = [
     tags: ["Especial"],
     image: "/coffees/havaiano.png",
     price: 9.9,
-    quantity: 0,
+    quantity: 10,
   },
   {
     id: 13,
@@ -119,7 +119,7 @@ const coffees: Coffee[] = [
     tags: ["Especial"],
     image: "/coffees/arabe.png",
     price: 9.9,
-    quantity: 0,
+    quantity: 10,
   },
   {
     id: 14,
@@ -128,7 +128,7 @@ const coffees: Coffee[] = [
     tags: ["Especial", "Alcoólico"],
     image: "/coffees/irlandes.png",
     price: 9.9,
-    quantity: 0,
+    quantity: 10,
   }
 ]
 

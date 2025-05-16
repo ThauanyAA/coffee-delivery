@@ -14,7 +14,6 @@ export function CoffeeCard({ coffee }: { coffee: Coffee } ) {
   const { addItemToCart } = useContext(CartContext)
   const [quantity, setQuantity] = useState(MIN_QTY_ITEM);
   
-
   const incrementQty = () => {
     if (quantity < coffee.quantity) {
       setQuantity(quantity + 1);
@@ -35,6 +34,7 @@ export function CoffeeCard({ coffee }: { coffee: Coffee } ) {
       quantity
     }
     addItemToCart(itemToAdd)
+    setQuantity(MIN_QTY_ITEM)
   }
   return (
     <Card>

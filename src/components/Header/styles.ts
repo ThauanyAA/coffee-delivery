@@ -36,6 +36,10 @@ export const Location = styled.div`
   }
 `
 
+export const CartContainer = styled.div`
+  position: relative;
+`
+
 export const Cart = styled.div`
   display: flex;
   align-items: center;
@@ -44,4 +48,19 @@ export const Cart = styled.div`
   border-radius: 6px;
   padding: 0.5rem;
   color: ${(props) => props.theme["yellow-dark"]};
+`
+
+export const Badge = styled.div`
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: ${(props) => props.theme["yellow-dark"]};
+  color: white;
+  border-radius: 50%;
+  z-index: 1;
+  position: absolute;
+  top: -8px;
+  right: -8px;
 `

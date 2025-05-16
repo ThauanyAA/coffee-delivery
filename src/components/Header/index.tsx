@@ -1,8 +1,15 @@
-import { ActionsContainer, Cart, HeaderContainer, Location } from "./styles"
+import { useContext } from "react"
+import { ActionsContainer, Cart, CartContainer, Badge, HeaderContainer, Location } from "./styles"
 import HeaderLogo from "../../assets/Logo.png"
 import { MapPin, ShoppingCart } from "phosphor-react"
 import { NavLink } from "react-router-dom"
+import { Text } from '../Typography'
+import { CartContext } from "../../contexts/CartContext"
+
 export function Header() {
+  const { items } = useContext(CartContext)
+  const hasItems = items.length > 0;
+  
   return (
     <HeaderContainer>
       <img src={HeaderLogo} />
@@ -15,9 +22,18 @@ export function Header() {
             </Location>
           </NavLink>
           <NavLink to="/checkout">
-            <Cart>
-              <ShoppingCart weight="fill" size={22} />
-            </Cart>
+            <CartContainer>
+              {hasItems && (
+                <Badge>
+                  <Text variant="s" weight={500} color="white">
+                    {items.length}
+                  </Text>
+                </Badge>
+              )}
+              <Cart>
+                <ShoppingCart weight="fill" size={22} />
+              </Cart>
+            </CartContainer>
           </NavLink>
         </nav>
       </ActionsContainer>

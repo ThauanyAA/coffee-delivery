@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useEffect, useMemo, useReducer } from "react";
-import { AddressType, cartReducer, ItemType, PaymentMethod } from '../reducers/reducer'
+import { AddressType, cartReducer, ItemType } from '../reducers/reducer'
 import { 
   addNewItemToCart,
   clearCartItems,
@@ -8,6 +8,7 @@ import {
   setPayment,
   updateAddress,
 } from '../reducers/actions'
+import { PaymentMethod } from "../@types/definitions";
 
 interface CartContextProviderProps {
   children: ReactNode

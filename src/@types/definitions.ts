@@ -7,3 +7,16 @@ export interface Coffee {
   price: number;
   quantity: number;
 }
+
+export interface ItemType {
+  id: string
+  name: string
+  price: number
+  quantity: number
+}
+
+export enum PaymentMethod {
+  DEBIT_CARD = 'debit-card',
+  CREDIT_CARD = 'credit-card',
+  CASH = 'cash',
+}

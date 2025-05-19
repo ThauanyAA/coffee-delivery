@@ -54,7 +54,7 @@ export function updateAddress(address: AddressType) {
 
 export function setPayment(method: PaymentMethod) {
   return {
-    type: ActionTypes.UPDATE_ADDRESS,
+    type: ActionTypes.SET_PAYMENT_METHOD,
     payload: {
       method
     }

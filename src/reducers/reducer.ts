@@ -1,10 +1,6 @@
 import { ActionTypes } from "./actions"
+import { PaymentMethod } from '../@types/definitions'
 
-export enum PaymentMethod {
-  DEBIT_CARD = 'debit-card',
-  CREDIT_CARD = 'credit-card',
-  CASH = 'cash',
-}
 
 export interface AddressType  {
   zipCode: string,
@@ -60,6 +56,7 @@ export function cartReducer(state: CartType, action: any) {
       return { ...state, address: action.payload.address }
 
     case ActionTypes.SET_PAYMENT_METHOD:
+      console.log('action.payload.method ', action.payload.method)
       return { ...state, paymentMethod: action.payload.method }
 
     case ActionTypes.CLEAR_CART:

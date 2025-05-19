@@ -4,9 +4,9 @@ import { PaymentMethod } from '../@types/definitions'
 
 export interface AddressType  {
   zipCode: string,
-  adress: string,
+  address: string,
   number: string,
-  complement: number,
+  complement: string,
   district: string,
   state: string
   city: string
@@ -53,10 +53,15 @@ export function cartReducer(state: CartType, action: any) {
       )};
 
     case ActionTypes.UPDATE_ADDRESS:
-      return { ...state, address: action.payload.address }
+      return {
+        ...state,
+        address: {
+          ...state.address,
+          ...action.payload.address
+        }
+      }
 
     case ActionTypes.SET_PAYMENT_METHOD:
-      console.log('action.payload.method ', action.payload.method)
       return { ...state, paymentMethod: action.payload.method }
 
     case ActionTypes.CLEAR_CART:

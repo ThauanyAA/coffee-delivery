@@ -1,3 +1,5 @@
+import { ChangeEvent, useContext } from 'react'
+import { CartContext } from '../../contexts/CartContext';
 import { CurrencyDollar, MapPinLine } from "phosphor-react";
 import { Input } from "../Input";
 import { Text, Title } from "../Typography";
@@ -6,6 +8,28 @@ import { Card } from "../Card";
 import PaymentOptions from "../PaymentOptions";
 
 export function CheckoutForm() {
+  const { address, setAddress } = useContext(CartContext)
+ 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    
+    const validFields = [
+      'zipCode', 
+      'address', 
+      'number', 
+      'complement', 
+      'district', 
+      'state', 
+      'city'
+    ];
+  
+    if (!validFields.includes(id)) return;
+  
+    setAddress({
+      ...address,
+      [id]: value
+    });
+  };
   return (
     <div>
       <Title variant="xs" color="base-subtitle">Complete seu pedido</Title>
@@ -22,25 +46,68 @@ export function CheckoutForm() {
         
         <AddressFields>
           <div style={{ gridArea: 'zipCode' }}>
-            <Input id="cep" placeholder="CEP" />
+            <Input
+              type="text"
+              id="zipCode"
+              placeholder="CEP"
+              value={address.zipCode}
+              onChange={handleChange}
+            />
           </div>
           <div style={{ gridArea: 'address' }}>
-            <Input type="text" placeholder="Rua" />
+            <Input
+              type="text"
+              placeholder="Rua"
+              id="address"
+              value={address.address}
+              onChange={handleChange}
+            />
           </div>
           <div style={{ gridArea: 'number' }}>
-            <Input type="text" placeholder="Número" />
+            <Input
+              type="text"
+              placeholder="Número"
+              id="number"
+              value={address.number}
+              onChange={handleChange}
+            />
           </div>
           <div style={{ gridArea: 'complement' }}>
-            <Input type="text" placeholder="Complemento" optional />
+            <Input
+              type="text"
+              placeholder="Complemento"
+              optional
+              id="complement"
+              value={address.complement}
+              onChange={handleChange}
+            />
           </div>
           <div style={{ gridArea: 'district' }}>
-            <Input type="text" placeholder="Bairro" />
+            <Input
+              type="text"
+              placeholder="Bairro"
+              id="district"
+              value={address.district}
+              onChange={handleChange}
+            />
           </div>
           <div style={{ gridArea: 'city' }}>
-            <Input type="text" placeholder="Cidade" />
+            <Input
+              type="text"
+              placeholder="Cidade"
+              id="city"
+              value={address.city}
+              onChange={handleChange}
+            />
           </div>
           <div style={{ gridArea: 'state' }}>
-            <Input type="text" placeholder="UF" />
+            <Input
+              type="text"
+              placeholder="UF"
+              id="state"
+              value={address.state}
+              onChange={handleChange}
+            />
           </div>
         </AddressFields>
       </Card>

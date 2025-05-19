@@ -34,8 +34,8 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     items: [],
     address: {
       zipCode: '',
-      adress: '',
-      number: undefined,
+      address: '',
+      number: '',
       complement: '',
       district: '',
       state: '',
@@ -93,7 +93,9 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   return (
     <CartContext.Provider
       value={{ 
-        ...cartState,
+        items: cartState.items,
+        address: cartState.address,
+        paymentMethod: cartState.paymentMethod,
         addItemToCart,
         removeItem,
         updateItemQuantity,

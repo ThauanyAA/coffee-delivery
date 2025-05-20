@@ -23,7 +23,9 @@ export function SelectedCoffee({ item }: SelectedCoffeeProps) {
   };
 
   const handleDecrementQty = () => {
-    updateItemQuantity(item.id, item.quantity - 1)
+    if (item.quantity > 1) {
+      updateItemQuantity(item.id, item.quantity - 1)
+    }
   };
 
   const handleRemoveItemFromCart = () => {

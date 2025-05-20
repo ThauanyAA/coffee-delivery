@@ -7,3 +7,9 @@ export const CheckoutContainer = styled.div`
   margin-top: 2rem;
   width: 100%;
 `
+
+export const EmptyCart = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`

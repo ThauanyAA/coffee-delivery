@@ -31,10 +31,10 @@ export function CoffeeCard({ coffee }: { coffee: Coffee } ) {
       name: item.name,
       id: item.id,
       price: item.price,
+      image: item.image,
       quantity
     }
     addItemToCart(itemToAdd)
-    setQuantity(MIN_QTY_ITEM)
   }
   return (
     <Card>

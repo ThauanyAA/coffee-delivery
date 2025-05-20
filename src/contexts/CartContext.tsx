@@ -19,8 +19,8 @@ interface CartContextType {
   address: AddressType
   paymentMethod: PaymentMethod | undefined
   addItemToCart: (item: ItemType) => void
-  updateItemQuantity: (itemId: number, quantity: number) => void
-  removeItem: (itemId: number) => void
+  updateItemQuantity: (itemId: string, quantity: number) => void
+  removeItem: (itemId: string) => void
   clearCart: () => void
   total: number
   setPaymentMethod: (method: PaymentMethod) => void
@@ -70,11 +70,11 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     dispatch(addNewItemToCart(item))
   }
 
-  function removeItem(itemId: number) {
+  function removeItem(itemId: string) {
     dispatch(removeItemFromCart(itemId))
   }
 
-  function updateItemQuantity(itemId: number, quantity: number) {
+  function updateItemQuantity(itemId: string, quantity: number) {
     dispatch(updateQuantity(itemId, quantity))
   }
 

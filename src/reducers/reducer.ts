@@ -13,10 +13,11 @@ export interface AddressType  {
 }
 
 export interface ItemType {
-  id: number
+  id: string
   name: string
   price: number
   quantity: number
+  image: string
 }
 
 export interface CartType {

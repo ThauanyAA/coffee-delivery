@@ -1,5 +1,5 @@
 export interface Coffee {
-  id: number;
+  id: string;
   name: string;
   description: string;
   tags: string[];
@@ -13,6 +13,7 @@ export interface ItemType {
   name: string
   price: number
   quantity: number
+  image: string
 }
 
 export enum PaymentMethod {

@@ -18,7 +18,7 @@ export function addNewItemToCart(item: ItemType) {
   }
 }
 
-export function removeItemFromCart(itemId: number) {
+export function removeItemFromCart(itemId: string) {
   return {
     type: ActionTypes.REMOVE_ITEM_FROM_CART,
     payload: { 
@@ -27,7 +27,7 @@ export function removeItemFromCart(itemId: number) {
   }
 }
 
-export function updateQuantity(itemId: number, quantity: number) {
+export function updateQuantity(itemId: string, quantity: number) {
   return {
     type: ActionTypes.UPDATE_ITEM_QUANTITY,
     payload: { 

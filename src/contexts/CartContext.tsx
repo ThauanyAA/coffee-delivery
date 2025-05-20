@@ -1,5 +1,5 @@
-import { createContext, ReactNode, useEffect, useMemo, useReducer } from "react";
-import { AddressType, cartReducer, ItemType } from '../reducers/reducer'
+import { createContext, ReactNode, useEffect, useMemo, useReducer, useState } from "react";
+import { cartReducer, ItemType } from '../reducers/reducer'
 import { 
   addNewItemToCart,
   clearCartItems,
@@ -8,10 +8,16 @@ import {
   setPayment,
   updateAddress,
 } from '../reducers/actions'
-import { PaymentMethod } from "../@types/definitions";
+import { AddressType, PaymentMethod } from "../@types/definitions";
 
 interface CartContextProviderProps {
   children: ReactNode
+}
+
+interface ErrorType {
+  address: string | null;
+  payment: string | null;
+  items: string | null;
 }
 
 interface CartContextType {
@@ -26,6 +32,8 @@ interface CartContextType {
   deliveryTax: number
   setPaymentMethod: (method: PaymentMethod) => void
   setAddress: (address: AddressType) => void
+  validateOrder: () => boolean
+  errors: ErrorType
 }
 
 export const CartContext = createContext({} as CartContextType)
@@ -56,7 +64,13 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
   })
 
   const deliveryTax = 3.5
-
+  
+  const [errors, setErrors] = useState<ErrorType>({
+    address: null,
+    payment: null,
+    items: null,
+  });
+  
   const total = useMemo(() => {
     return cartState.items.reduce(
       (sum, item) => sum + item.price * item.quantity,
@@ -68,6 +82,36 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     const stateJSON = JSON.stringify(cartState);
     localStorage.setItem('@coffee-delivery:cart-1.0.0', stateJSON);
   }, [cartState]);
+
+  const isAddressValid = (
+    cartState.address.zipCode &&
+    cartState.address.city &&
+    cartState.address.state &&
+    cartState.address.address &&
+    cartState.address.number &&
+    cartState.address.district
+  );
+
+  function validateOrder() {
+    let isValid = true;
+
+    if (!isAddressValid) {
+      setErrors((prevState: ErrorType) => ({ ...prevState, address: "Endereço incompleto" }))
+      isValid = false;
+    }
+  
+    if (!cartState.paymentMethod) {
+      setErrors((prevState: ErrorType) => ({ ...prevState, payment: "Selecione uma forma de pagamento" }))
+      isValid = false;
+    }
+
+    if (cartState.items.length === 0) {
+      setErrors((prevState: ErrorType) => ({ ...prevState, items: "Adicione pelo menos 1 item" }))
+      isValid = false;
+    }
+  
+    return isValid;
+  };
 
   function addItemToCart(item: ItemType) {
     dispatch(addNewItemToCart(item))
@@ -106,7 +150,9 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         clearCart,
         total,
         setPaymentMethod,
-        setAddress
+        setAddress,
+        validateOrder,
+        errors
       }}
     >
       {children}

@@ -1,17 +1,5 @@
 import { ActionTypes } from "./actions"
-import { PaymentMethod } from '../@types/definitions'
-
-
-export interface AddressType  {
-  zipCode: string,
-  address: string,
-  number: string,
-  complement: string,
-  district: string,
-  state: string
-  city: string
-}
-
+import { PaymentMethod, AddressType } from '../@types/definitions'
 export interface ItemType {
   id: string
   name: string

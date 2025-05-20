@@ -8,6 +8,16 @@ export interface Coffee {
   quantity: number;
 }
 
+export interface AddressType  {
+  zipCode: string,
+  address: string,
+  number: string,
+  complement: string,
+  district: string,
+  state: string
+  city: string
+}
+
 export interface ItemType {
   id: string
   name: string
@@ -20,4 +30,13 @@ export enum PaymentMethod {
   DEBIT_CARD = 'debit-card',
   CREDIT_CARD = 'credit-card',
   CASH = 'cash',
+}
+
+export interface OrderData {
+  items: ItemType[];
+  total: number;
+  address: AddressType;
+  paymentMethod: PaymentMethod;
+  orderId?: number;
+  estimatedDelivery?: Date;
 }

@@ -1,3 +1,5 @@
+import { PaymentMethod } from "../@types/definitions";
+
 export const formatPriceToBRL = (value: number) => {
   const parts = new Intl.NumberFormat('pt-BR', {
     style: 'currency',
@@ -9,3 +11,16 @@ export const formatPriceToBRL = (value: number) => {
     .map(part => part.value)
     .join('');
 };
+
+export function formatPaymentMethod(method: PaymentMethod) {
+  switch(method) {
+    case 'cash':
+      return 'Dinheiro';
+    case 'debit-card':
+      return 'Cartão de Débito';
+    case 'credit-card':
+      return 'Cartão de Crédito';
+    default:
+      return ''
+  }
+}

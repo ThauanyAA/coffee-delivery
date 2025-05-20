@@ -4,7 +4,7 @@ import { CheckoutForm } from "../../components/CheckoutForm";
 import { CheckoutContainer, EmptyCart } from "./styles";
 import { CartContext } from "../../contexts/CartContext";
 import { Title, Text } from "../../components/Typography";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "../../components/Button";
 
 export function Checkout() {

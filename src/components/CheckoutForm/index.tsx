@@ -8,7 +8,7 @@ import { Card } from "../Card";
 import PaymentOptions from "../PaymentOptions";
 
 export function CheckoutForm() {
-  const { address, setAddress } = useContext(CartContext)
+  const { address, setAddress, errors } = useContext(CartContext)
  
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -110,6 +110,7 @@ export function CheckoutForm() {
             />
           </div>
         </AddressFields>
+        {errors.address && <Text color="red-500">{errors.address}</Text>}
       </Card>
 
       <Card>
@@ -125,6 +126,7 @@ export function CheckoutForm() {
           </div>
         </CardHeader>
         <PaymentOptions />
+        {errors.payment && <Text color="red-500">{errors.payment}</Text>}
       </Card>
     </div>
   );

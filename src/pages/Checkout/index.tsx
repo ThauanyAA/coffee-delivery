@@ -4,6 +4,8 @@ import { CheckoutForm } from "../../components/CheckoutForm";
 import { CheckoutContainer, EmptyCart } from "./styles";
 import { CartContext } from "../../contexts/CartContext";
 import { Title, Text } from "../../components/Typography";
+import { NavLink, Link } from "react-router-dom";
+import { Button } from "../../components/Button";
 
 export function Checkout() {
   const { items } = useContext(CartContext)
@@ -17,6 +19,12 @@ export function Checkout() {
       <Text variant="m" align="center">
         Adicione algum item ao carrinho para continuar!
       </Text>
+
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <Button variant="primary">
+          Ver Cafés disponíveis
+        </Button>
+      </Link>
     </EmptyCart>
   )
   

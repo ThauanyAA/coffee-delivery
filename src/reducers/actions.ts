@@ -1,4 +1,5 @@
-import { AddressType, ItemType, PaymentMethod } from "./reducer";
+import { AddressType, ItemType } from "./reducer";
+import { PaymentMethod } from '../@types/definitions'
 
 export enum ActionTypes {
   ADD_ITEM_TO_CART = 'ADD_ITEM_TO_CART',

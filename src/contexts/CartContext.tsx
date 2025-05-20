@@ -23,6 +23,7 @@ interface CartContextType {
   removeItem: (itemId: string) => void
   clearCart: () => void
   total: number
+  deliveryTax: number
   setPaymentMethod: (method: PaymentMethod) => void
   setAddress: (address: AddressType) => void
 }
@@ -53,6 +54,8 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
 
     return initialState
   })
+
+  const deliveryTax = 3.5
 
   const total = useMemo(() => {
     return cartState.items.reduce(
@@ -96,6 +99,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         items: cartState.items,
         address: cartState.address,
         paymentMethod: cartState.paymentMethod,
+        deliveryTax: deliveryTax,
         addItemToCart,
         removeItem,
         updateItemQuantity,

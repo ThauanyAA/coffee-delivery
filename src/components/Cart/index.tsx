@@ -1,10 +1,14 @@
+import { useContext } from "react";
 import { Button } from "../Button";
 import { Card } from "../Card";
 import { SelectedCoffee } from "../SelectedCoffee";
 import { Text, Title } from "../Typography";
 import { InfoContainer, ItemsInfo, SelectedItemsContainer } from "./styles";
+import { CartContext } from "../../contexts/CartContext";
+import { formatPriceToBRL } from "../../helpers/utils";
 
 export function Cart() {
+  const { items, total, deliveryTax } = useContext(CartContext)
   return (
     <div>
       <Title variant="xs" weight={700}>
@@ -13,8 +17,9 @@ export function Cart() {
       <Card>
         <p>Lista de cafés selecionados</p>
         <SelectedItemsContainer>
-          <SelectedCoffee />
-          <SelectedCoffee />  
+          {items.map(item => (
+            <SelectedCoffee item={item} />
+          ))} 
         </SelectedItemsContainer>
 
         <InfoContainer>
@@ -23,7 +28,7 @@ export function Cart() {
               Total de itens
             </Text>
             <Text variant="m" weight={400} color="base-text">
-              R$ 29,70
+              R$ {formatPriceToBRL(total)}
             </Text>
           </ItemsInfo>
 
@@ -32,7 +37,7 @@ export function Cart() {
               Entrega
             </Text>
             <Text variant="m" weight={400} color="base-text">
-              R$ 3,50
+              R$ {formatPriceToBRL(deliveryTax)}
             </Text>
           </ItemsInfo>
 
@@ -41,7 +46,7 @@ export function Cart() {
               Total
             </Text>
             <Text variant="l" color="base-subtitle" weight={700}>
-              R$ 33,20
+              R$ {formatPriceToBRL(total + deliveryTax)}
             </Text>
           </ItemsInfo>
         </InfoContainer>

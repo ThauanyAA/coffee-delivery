@@ -69,8 +69,8 @@ export function Cart() {
         <p>Lista de cafés selecionados</p>
         <SelectedItemsContainer>
           {items.map(item => (
-            <SelectedCoffee item={item} />
-          ))} 
+            <SelectedCoffee key={item.id} item={item} />
+          ))}
         </SelectedItemsContainer>
 
         <InfoContainer>

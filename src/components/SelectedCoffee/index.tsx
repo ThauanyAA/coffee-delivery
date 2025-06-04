@@ -4,7 +4,7 @@ import { Text } from "../Typography";
 import { InputNumber } from "../InputNumber";
 import { Trash } from "phosphor-react";
 import { Button } from "../Button";
-import { getCoffeeImage } from "../../assets/coffees";
+import CoffeeImg  from "../../assets/coffees/Expresso.png";
 import { ItemType } from "../../@types/definitions";
 import { formatPriceToBRL } from "../../helpers/utils";
 import { toast } from 'react-toastify';
@@ -36,7 +36,7 @@ export function SelectedCoffee({ item }: SelectedCoffeeProps) {
   return (
     <SelectedCoffeeCard>
       <CoffeInfoContainer>
-        <CoffeeImage src={getCoffeeImage(item.image)} alt="Coffee" />
+        <CoffeeImage src={CoffeeImg} alt="Coffee" />
         <CoffeeInfo>
           <Text variant="m" weight={400} color="base-subtitle">
             {item.name}

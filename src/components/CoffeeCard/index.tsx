@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { AddToCartButton, BuyContainer, Card, Image, Tag, TagsContainer } from "./styles";
-import { getCoffeeImage } from "../../assets/coffees";
+import Expresso from "../../assets/coffees/Expresso.png";
 import { ShoppingCartSimple } from "phosphor-react";
 import { Coffee } from "../../@types/definitions";
 import { formatPriceToBRL } from "../../helpers/utils";
@@ -38,7 +38,7 @@ export function CoffeeCard({ coffee }: { coffee: Coffee } ) {
   }
   return (
     <Card>
-      <Image src={getCoffeeImage(coffee.image)} alt="Coffee" />
+      <Image src={Expresso} alt="Coffee" />
 
       <TagsContainer>
         {coffee.tags.map((tag) => (

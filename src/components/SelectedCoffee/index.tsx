@@ -30,7 +30,7 @@ export function SelectedCoffee({ item }: SelectedCoffeeProps) {
 
   const handleRemoveItemFromCart = () => {
     removeItem(item.id)
-    toast.warning('O item for removido do seu carrinho!', )
+    toast.warning('O item foi removido do seu carrinho!')
   }
 
   return (

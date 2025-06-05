@@ -80,14 +80,5 @@ Durante o desenvolvimento, aprofundei meus conhecimentos em:
 🚧 Possíveis melhorias futuras:
 
 * Integração com API real de pagamentos e entregas
-* Persistência do carrinho via localStorage
 * Suporte a múltiplos idiomas
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
----
-
-Se quiser, posso gerar também o `preview.png` com uma com
 
